@@ -124,6 +124,18 @@ explore: fact_student_school_enrollment {
     relationship: many_to_many
     type: left_outer
   }
+  join: rel_student_characteristics {
+    view_label: "Student Characteristics"
+    sql_on: ${rel_student_characteristics.student_key} = ${fact_student_school_enrollment.student_key} ;;
+    relationship: many_to_many
+    type: left_outer
+  }
+  join: ref_student_characteristic {
+    view_label: "Student Characteristics"
+    sql_on: ${ref_student_characteristic.student_characteristic_key} = ${rel_student_characteristics.student_characteristic_key} ;;
+    relationship: one_to_many
+    type: left_outer
+  }
 #    type: left_outer
 #    relationship: many_to_one
 #    sql_on: ${dim_student.student_c} = ${ref_student_characteristic.student_characteristic_key} ;;
