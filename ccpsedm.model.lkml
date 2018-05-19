@@ -54,6 +54,24 @@ explore: dim_date {
     relationship: one_to_one
     type: left_outer
   }
+  join: rel_student_race {
+    view_label: "Student Race"
+    sql_on: ${rel_student_race.student_key} = ${dim_student.student_key} ;;
+    relationship: one_to_many
+    type: left_outer
+  }
+  join: ref_race_type {
+    view_label: "Race Description"
+    sql_on: ${ref_race_type.race_type_key} = ${rel_student_race.race_type_key} ;;
+    relationship: one_to_one
+    type: inner
+  }
+  join: ref_grade_level_type {
+    view_label: "Grade Level"
+    sql_on: ${ref_grade_level_type.grade_level_type_key} = ${fact_student_school_enrollment.grade_level_type_key} ;;
+    relationship: many_to_many
+    type: left_outer
+  }
 }
 
 
@@ -88,7 +106,24 @@ explore: fact_student_school_enrollment {
     relationship: one_to_one
     type: left_outer
   }
-#  join: ref_student_characteristic {
+  join: rel_student_race {
+    view_label: "Student Race"
+    sql_on: ${rel_student_race.student_key} = ${dim_student.student_key} ;;
+    relationship: one_to_many
+    type: left_outer
+  }
+  join: ref_race_type {
+    view_label: "Race Description"
+    sql_on: ${ref_race_type.race_type_key} = ${rel_student_race.race_type_key} ;;
+    relationship: one_to_one
+    type: left_outer
+  }
+  join: ref_grade_level_type {
+    view_label: "Grade Level"
+    sql_on: ${ref_grade_level_type.grade_level_type_key} = ${fact_student_school_enrollment.grade_level_type_key} ;;
+    relationship: many_to_many
+    type: left_outer
+  }
 #    type: left_outer
 #    relationship: many_to_one
 #    sql_on: ${dim_student.student_c} = ${ref_student_characteristic.student_characteristic_key} ;;
