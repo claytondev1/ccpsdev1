@@ -104,13 +104,13 @@ explore: fact_student_school_enrollment {
     view_label: "Students"
     sql_on: ${ref_sex_type.sex_type_key} = ${dim_student.sex_type_key} ;;
     relationship: one_to_one
-    type: left_outer
+    type: inner
   }
   join: rel_student_race {
     view_label: "Student Race"
     sql_on: ${rel_student_race.student_key} = ${dim_student.student_key} ;;
     relationship: one_to_many
-    type: left_outer
+    type: inner
   }
   join: ref_race_type {
     view_label: "Race Description"
@@ -128,7 +128,7 @@ explore: fact_student_school_enrollment {
     view_label: "Student Characteristics"
     sql_on: ${rel_student_characteristics.student_key} = ${fact_student_school_enrollment.student_key} ;;
     relationship: many_to_many
-    type: left_outer
+    type: inner
   }
   join: ref_student_characteristic {
     view_label: "Student Characteristics"
