@@ -162,14 +162,6 @@ view: fact_student_school_enrollment {
     description: "The number of primary enrollments not including no shows"
     type: count
     filters: {
-      field: is_last_record_in_school_year
-      value: "1"
-    }
-    filters: {
-      field: is_no_show
-      value: "0"
-    }
-    filters: {
       field: is_school_choice_transfer
       value: "1"
     }

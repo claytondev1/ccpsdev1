@@ -4,7 +4,7 @@ view: ref_grade_level_type {
   dimension: grade_level_type_desc {
     type: string
     sql: ${TABLE}.GradeLevelTypeDesc ;;
-  }
+     }
 
   dimension: grade_level_type_id {
     type: string
