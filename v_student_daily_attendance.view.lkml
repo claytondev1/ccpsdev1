@@ -120,4 +120,10 @@ view: v_student_daily_attendance {
     type: count
    drill_fields: [total_count]
   }
+
+  measure: presentCount {
+    type: count
+    drill_fields: [is_present]
+
+  }
 }
