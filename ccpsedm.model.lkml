@@ -102,8 +102,9 @@ explore: v_student_daily_attendance  {
 
   join: vschoolname {
     view_label: "SchoolNames"
+    relationship: many_to_one
     sql_on: ${vschoolname.SchoolKey} = ${v_student_daily_attendance.school_key};;
-    relationship: many_to_many
+
   }
 
 }
