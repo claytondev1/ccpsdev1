@@ -28,7 +28,7 @@
 #
   dimension: SchoolName {
     description: "Name for School"
-    type: number
+    type: string
     sql: ${TABLE}.SchoolName;;
   }
  }
