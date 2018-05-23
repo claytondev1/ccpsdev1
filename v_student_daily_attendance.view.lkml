@@ -117,7 +117,7 @@ view: v_student_daily_attendance {
   }
 
   measure: count {
-    type: count
-    drill_fields: []
+    type: number
+    sql: count({$table.TotalCount}) ;;
   }
 }
