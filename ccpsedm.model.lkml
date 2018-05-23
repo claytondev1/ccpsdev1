@@ -99,4 +99,11 @@ explore: fact_student_school_enrollment {
 explore: v_student_daily_attendance  {
   label: "Attendance"
   description: "Use this explore for attendance information"
+
+  join: dim_school {
+    view_label: "Schools"
+    sql_on: ${dim_school.school_key} = ${v_student_daily_attendance.school_key}.school_key} ;;
+     relationship: many_to_many
+  }
+
 }
