@@ -100,10 +100,10 @@ explore: v_student_daily_attendance  {
   label: "Attendance"
   description: "Use this explore for attendance information"
 
-  join: dim_school {
-    view_label: "Schools"
-    sql_on: ${dim_school.school_key} = ${v_student_daily_attendance.school_key}.school_key} ;;
-     relationship: many_to_many
+  join: vschoolname {
+    view_label: "SchoolNames"
+    sql_on: ${vschoolname.SchoolKey} = ${}${v_student_daily_attendance.school_key};;
+    relationship: many_to_many
   }
 
 }
