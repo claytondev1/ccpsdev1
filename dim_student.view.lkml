@@ -81,6 +81,15 @@ view: dim_student {
     sql: ${TABLE}.LastName ;;
   }
 
+  dimension: full_name {
+    type: string
+    sql: ${first_name} || ' '  || ${last_name} ;;
+    link: {
+      label: "Student Profile"
+      url: "http://"
+    }
+  }
+
   dimension: maiden_name {
     type: string
     sql: ${TABLE}.MaidenName ;;
