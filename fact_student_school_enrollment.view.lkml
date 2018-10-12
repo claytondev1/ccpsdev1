@@ -167,4 +167,9 @@ view: fact_student_school_enrollment {
     }
     drill_fields: []
   }
+
+  measure: sum_of_student {
+    type:  sum
+     sql:  ${student_key} ;;
+  }
 }
