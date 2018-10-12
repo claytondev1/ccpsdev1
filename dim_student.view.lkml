@@ -195,6 +195,11 @@ view: dim_student {
     sql: ${TABLE}.StudentStatusKey ;;
   }
 
+  measure: sum_of_student {
+    type:  sum
+    sql:  ${student_id};;
+  }
+
   measure: count {
     type: count
     drill_fields: [first_name, middle_name, last_name, maiden_name]
